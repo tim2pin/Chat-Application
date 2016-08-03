@@ -140,11 +140,15 @@ import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput, FormSelec
 //onClick={browserHistory.push('/chat')
 
 export default class LoginForm extends Component {
+  onLoginSubmit(e) {
+    e.preventDefault()
+    browserHistory.push('/chat')
+  }
 
   render() {
     return (
       <div>
-        <Form style={{width:'30%', margin:'0 auto', background:'#dedede', padding:'20px',}} type="horizontal">
+        <Form onSubmit={this.onLoginSubmit.bind(this)} style={{width:'30%', margin:'0 auto', background:'#dedede', padding:'20px',}} type="horizontal">
           <FormField label="Username:" htmlFor="horizontal-form-input-username">
           <FormInput type="text" placeholder="Enter username" name="horizontal-form-input-username" />
           </FormField>

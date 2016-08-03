@@ -37,7 +37,7 @@ export default class Comment extends Component {
               <Col style={{marginBottom: '20px'}}>
                 <hr />
                 <Button type="hollow-success" size="sm">Cheer</Button>
-                <Button type="hollow-danger" size="sm">Jeer</Button>
+                <Button type="hollow-danger" size="sm">Boo</Button>
               </Col>
             </Row>
           </Col>
