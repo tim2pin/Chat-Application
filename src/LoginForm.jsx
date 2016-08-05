@@ -5,8 +5,7 @@ import elementalStyles from '../node_modules/elemental/less/elemental.less';
 
 import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput, FormSelect } from 'elemental';
 
-
-  const teamOptions = [
+  var teamOptions = [
     {
       label: 'Arizona Cardinals',
       value: 'Arizona Cardinals'
@@ -137,27 +136,53 @@ import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput, FormSelec
     },
   ]
 
-//onClick={browserHistory.push('/chat')
-
 export default class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      enteredName:"",
+      pickedTeam:"",
+    }
+    console.log(teamOptions);
+  }
+
+  handleInputChange(e) {
+    console.log("name entered", e.target.value);
+    this.setState({enteredName: e.target.value});
+  }
+
+  handleSelect(team) {
+    console.log("team picked", team);
+    this.setState({pickedTeam: team});
+  }
+
   onLoginSubmit(e) {
     e.preventDefault()
-    browserHistory.push('/chat')
+    browserHistory.push('/chat/' + this.state.enteredName + '/' + this.state.pickedTeam )
   }
+
+
+
 
   render() {
     return (
       <div>
-        <Form onSubmit={this.onLoginSubmit.bind(this)} style={{width:'30%', margin:'0 auto', background:'#dedede', padding:'20px',}} type="horizontal">
+        <h1 style={{textAlign:'center',fontFamily:'Racing Sans One',}}>Login</h1>
+        <Form onSubmit={this.onLoginSubmit.bind(this)} style={{width:'40%', margin:'0 auto', background:'#dedede', padding:'10px',}} type="horizontal">
+
           <FormField label="Username:" htmlFor="horizontal-form-input-username">
-          <FormInput type="text" placeholder="Enter username" name="horizontal-form-input-username" />
+          <FormInput onChange={this.handleInputChange.bind(this)} type="text" placeholder="Enter username" name="horizontal-form-input-username" />
           </FormField>
 
-          <FormSelect label="Favorite Team" options={teamOptions} firstOption="Select Favorite Team" onChange={this.handleSelect} />
+          <FormField label="Favorite Team:" >
+          <FormSelect onChange={this.handleSelect.bind(this)}  options={teamOptions} firstOption="Select Favorite Team" />
+          </FormField>
+
 
           <FormField offsetAbsentLabel>
-          <Button style={{float:'right',}} size="xs" submit >Login</Button>
+          <Button style={{float:'right', fontFamily:'Racing Sans One',}} size="sm" submit >Login</Button>
           </FormField>
+
         </Form>
 
       </div>
