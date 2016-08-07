@@ -5,14 +5,15 @@ import globalStyles from './assets/styles/global.css';
 var headerStyle = {
   background: 'url(http://www.freewebheaders.com/wordpress/wp-content/gallery/grass/green-striped-grass-soccer-football-field-background-header.jpg)',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover', 
+  backgroundSize: 'cover',
+  boxShadow: '7px 7px 3.5px #888888', 
   textAlign: 'center',
-  height: '170px', 
+  height: '200px', 
   marginBottom: '100px',
-  fontSize: '75px',
-  paddingTop: '50px',
+  fontSize: '70px',
+  paddingTop: '70px',
   color: 'white',
-  textShadow: "-1.5px 0 black, 0 1.5px black, 6.5px 0 black, 0 -1.5px black",
+  textShadow: "-2.0px 0 black, 0 2.2px black, 6.5px 0 black, 0 -1.5px black",
   fontFamily: 'Racing Sans One', 
 }
 

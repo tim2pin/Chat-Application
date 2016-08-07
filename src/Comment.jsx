@@ -3,9 +3,12 @@ import { browserHistory } from 'react-router';
 
 import {Row, Col, Button, Glyph} from 'elemental';
 
+//var Count = require('react-count');
+
+
+
+
 export default class Comment extends Component {
-
-
 // getInitialState() {
 //     counter:0
 // }
@@ -13,12 +16,10 @@ export default class Comment extends Component {
 // increment() {
 //   this.setState({ counter: this.state.counter+1});
 // }
+
   render() {
     return (
-      <div style={{
-        borderBottom: '2px solid #dedede',
-        marginBottom: '40px'
-      }}>
+      <div style={{borderBottom: '2px solid #dedede',marginBottom: '40px'}}>
         <Row>
           {/*<Col sm="1/3">
             <div style={{
@@ -40,13 +41,13 @@ export default class Comment extends Component {
             </Row>
             <Row>
               <Col>
-                <strong>Subject</strong><br />
+                <strong><u>Subject</u></strong><br />
                 {this.props.subject}
               </Col>
             </Row>
             <Row>
               <Col>
-                <strong>Comment</strong><br />
+                <strong><u>Comment</u></strong><br />
                 {this.props.comment}
               </Col>
             </Row>
@@ -54,7 +55,7 @@ export default class Comment extends Component {
               <Col style={{marginBottom: '20px'}}>
                 <hr />
                 {/*<div>{this.state.counter}</div>*/}
-                <Button /*onClick={this.increment}*/ style={{width:'75px', marginRight:'5px'}} type="success" size="sm"><Glyph icon="thumbsup" /></Button>
+                <Button /*onClick={this.increment}*/ style={{width:'75px', marginRight:'3px', }} type="success" size="sm"><Glyph icon="thumbsup" /></Button>
                 <Button style={{width:'75px',}} type="danger" size="sm"><Glyph icon="thumbsdown" /></Button>
               </Col>
             </Row>
