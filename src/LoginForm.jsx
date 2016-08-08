@@ -143,7 +143,7 @@ export default class LoginForm extends Component {
       enteredName:"",
       pickedTeam:"",
     }
-    console.log(teamOptions);
+    // console.log(teamOptions);
   }
 
   handleInputChange(e) {
@@ -168,10 +168,17 @@ export default class LoginForm extends Component {
     return (
       <div>
         <h1 style={{textAlign:'center',fontFamily:'Racing Sans One',}}>Login</h1>
-        <Form onSubmit={this.onLoginSubmit.bind(this)} style={{width:'40%', margin:'0 auto', background:'#dedede', padding:'10px',}} type="horizontal">
+        <Form type="horizontal" onSubmit={this.onLoginSubmit.bind(this)} style={{
+          border: '1px solid #dedede', 
+          width:'40%', 
+          margin:'0 auto', 
+          padding:'18px', 
+          marginBottom:'95px',
+          boxShadow: '5px 5px 5px 5px #888888', 
+          background:'#f1f1f4'}} >
 
           <FormField label="Username:" htmlFor="horizontal-form-input-username">
-          <FormInput onChange={this.handleInputChange.bind(this)} type="text" placeholder="Enter username" name="horizontal-form-input-username" />
+          <FormInput onChange={this.handleInputChange.bind(this)} type="text" placeholder="Enter Username" name="horizontal-form-input-username" />
           </FormField>
 
           <FormField label="Favorite Team:" >
@@ -180,7 +187,7 @@ export default class LoginForm extends Component {
 
 
           <FormField offsetAbsentLabel>
-          <Button style={{float:'right', fontFamily:'Racing Sans One',}} size="sm" submit >Login</Button>
+          <Button style={{float:'right', fontFamily:'Racing Sans One',boxShadow: '0.5px 0.5px 0.5px 0.5px #888888',}} size="sm" submit >Login</Button>
           </FormField>
 
         </Form>

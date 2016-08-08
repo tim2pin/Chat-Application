@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "hjs-dev-server",
-    "build": "webpack"
+    "start": "npm-run-all --parallel serve:dev start:dev",
+    "build": "webpack",
+    "start:dev": "hjs-dev-server",
+    "start:prod": "npm run schema:restore && npm run serve:express",
+    "schema:dump": "hz get-schema -o ./.hz/schema.toml",
+    "schema:restore": "hz set-schema ./.hz/schema.toml --connect $(./util/scripts/parseurl.sh $RETHINKDB_URL)",
+    "serve:dev": "hz serve --dev",
+    "serve:express": "node ./util/server/express.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +26,13 @@
   },
   "homepage": "https://github.com/tim2pin/Chat-Application#readme",
   "dependencies": {
+    "@horizon/client": "^1.1.3",
     "browserify": "^13.1.0",
     "elemental": "^0.6.0",
     "hjs-webpack": "^8.3.0",
     "jsx-loader": "^0.13.2",
     "less": "^2.7.1",
+    "npm-run-all": "^2.3.0",
     "react": "^15.3.0",
     "react-addons-css-transition-group": "^15.3.0",
     "react-count": "^0.2.4",

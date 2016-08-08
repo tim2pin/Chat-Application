@@ -2,13 +2,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
+
 import LoginPage from './LoginPage.jsx';
 import ChatPage from './ChatPage.jsx';
-import CommentForm from './CommentForm.jsx'
-import CommentList from './CommentList.jsx';
 import NoMatch from './NoMatch.jsx';
-import globalStyles from './assets/styles/global.css';
 
+
+//import Horizon from '@horizon/client';
 
 
 export default class App extends Component {
@@ -30,6 +30,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
-
-
-// /:teamOptions
