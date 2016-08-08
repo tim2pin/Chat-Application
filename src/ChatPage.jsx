@@ -5,7 +5,9 @@ import CommentList from './CommentList.jsx';
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import Horizon from '@horizon/client';
 
+
 import {chat} from './stores.jsx';
+
 
 var headerStyle = {
   background: 'url(http://www.freewebheaders.com/wordpress/wp-content/gallery/grass/green-striped-grass-soccer-football-field-background-header.jpg)',

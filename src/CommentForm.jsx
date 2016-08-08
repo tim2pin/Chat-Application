@@ -14,7 +14,6 @@ export default class CommentForm extends Component {
       enteredSubject:"",
     }
 
-    console.log(hi ,this.state.comment);
     console.log(this.state.enteredComment);
     console.log(this.state.subject);
     console.log(this.state.enteredSubject);
