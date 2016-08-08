@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm-run-all --parallel serve:dev start:dev",
-    "build": "webpack",
-    "start:dev": "hjs-dev-server",
-    "start:prod": "npm run schema:restore && npm run serve:express",
+    "start": "npm-run-all --parallel serve:dev:server serve:dev:client",
+    "start:prod": "npm run schema:restore && npm run serve:prod",
+    "deploy": "npm run build:prod && npm run schema:dump && git push deploy",
+    "build:dev": "webpack",
+    "build:prod": "NODE_ENV=production webpack",
+    "serve:dev:client": "hjs-dev-server",
+    "serve:dev:server": "hz serve --dev",
+    "serve:prod": "node ./util/server/express.js",
     "schema:dump": "hz get-schema -o ./.hz/schema.toml",
-    "schema:restore": "hz set-schema ./.hz/schema.toml --connect $(./util/scripts/parseurl.sh $RETHINKDB_URL)",
-    "serve:dev": "hz serve --dev",
-    "serve:express": "node ./util/server/express.js"
+    "schema:restore": "hz set-schema ./.hz/schema.toml --connect $(./util/scripts/parseurl.sh $RETHINKDB_URL)"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@horizon/client": "^1.1.3",
     "browserify": "^13.1.0",
     "elemental": "^0.6.0",
+    "express": "^4.14.0",
     "hjs-webpack": "^8.3.0",
     "jsx-loader": "^0.13.2",
     "less": "^2.7.1",

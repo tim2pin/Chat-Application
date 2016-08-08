@@ -4,8 +4,6 @@ import CommentForm from './CommentForm.jsx';
 import CommentList from './CommentList.jsx';
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import Horizon from '@horizon/client';
-
-
 import {chat} from './stores.jsx';
 
 
