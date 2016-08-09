@@ -25,8 +25,8 @@
 #                application state
 # 'serve_static' will serve files from the given directory over HTTP/HTTPS
 #------------------------------------------------------------------------------
-project_name = "Chat_Application"
- serve_static = "public"
+project_name = "smacktalk"
+serve_static = "public"
 
 
 ###############################################################################

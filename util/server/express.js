@@ -25,13 +25,14 @@ var urlRethinkDB = url.parse(process.env.RETHINKDB_URL);
 
 const options = {
   auth: {
-    token_secret: 'my_super_secret_secret',
+    token_secret: 'supercornsEcretcuktscuvdlyvfouyvfio88fiudgj',
     allow_anonymous: true,
-    allow_unauthenticated: true
+    allow_unauthenticated: true,
   },
-  //secure: true,
+  auto_create_collection: true,
+  auto_create_index:true,
   permissions: false,
-  project_name: 'react_webpack_horizon',
+  project_name: 'smacktalk',
   rdb_host: urlRethinkDB.hostname,
   rdb_port: urlRethinkDB.port
 };
