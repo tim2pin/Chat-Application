@@ -29,6 +29,7 @@ const options = {
     allow_anonymous: true,
     allow_unauthenticated: true
   },
+  //secure: true,
   permissions: false,
   project_name: 'react_webpack_horizon',
   rdb_host: urlRethinkDB.hostname,

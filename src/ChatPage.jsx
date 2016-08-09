@@ -22,8 +22,6 @@ var headerStyle = {
   fontFamily: 'Racing Sans One', 
 }
 
-
-
 export default class ChatPage extends Component {
   constructor(props) {
     super(props);

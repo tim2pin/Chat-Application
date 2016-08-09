@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 import {Row, Col, Button, Glyph} from 'elemental';
+import {chat} from './stores.jsx'; // references to databases
 
+import CommentList from './CommentList';
 //var Count = require('react-count');
 
 
 
 
 export default class Comment extends Component {
-// getInitialState() {
-//     counter:0
-// }
 
-// increment() {
-//   this.setState({ counter: this.state.counter+1});
-// }
+handleDelete() {
+  chat.fetch().subscribe( function(allMessages) {
+      chat.remove(allMessages)
+    })
+}
 
   render() {
     return (
@@ -54,9 +55,10 @@ export default class Comment extends Component {
             <Row>
               <Col style={{marginBottom: '20px'}}>
                 <hr />
-                {/*<div>{this.state.counter}</div>*/}
-                <Button /*onClick={this.increment}*/ style={{width:'75px', marginRight:'3px', }} type="success" size="sm"><Glyph icon="thumbsup" /></Button>
-                <Button style={{width:'75px',}} type="danger" size="sm"><Glyph icon="thumbsdown" /></Button>
+                <Button style={{width:'75px', marginRight:'3px', }} type="success" size="sm"><Glyph icon="thumbsup" /></Button>
+                <Button style={{width:'75px', marginRight:'3px',}} type="danger" size="sm"><Glyph icon="thumbsdown" /></Button>
+                <Button onClick={this.handleDelete.bind(this)} style={{width:'40px', float: 'right',}} type="warning" size="sm"><Glyph icon="trashcan" /></Button>
+
               </Col>
             </Row>
           </Col>
