@@ -6,7 +6,6 @@ import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import Horizon from '@horizon/client';
 import {chat} from './stores.jsx';
 
-
 var headerStyle = {
   background: 'url(http://www.freewebheaders.com/wordpress/wp-content/gallery/grass/green-striped-grass-soccer-football-field-background-header.jpg)',
   backgroundRepeat: 'no-repeat',
@@ -42,7 +41,6 @@ export default class ChatPage extends Component {
       subject: subject, 
       team: this.props.params.team 
     })
-
     //console.log("comment:", comment, this);
     //var newCommentArray = Array.prototype.slice.call(this.state.commentArray);
     // newCommentArray.push({comment: comment, username: this.props.params.username, subject: subject, team: this.props.params.team });

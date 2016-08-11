@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
-
 import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput, FormSelect } from 'elemental';
 
   var teamOptions = [
@@ -161,9 +159,6 @@ export default class LoginForm extends Component {
     browserHistory.push('/chat/' + this.state.enteredName + '/' + this.state.pickedTeam )
   }
 
-
-
-
   render() {
     return (
       <div>
@@ -176,22 +171,16 @@ export default class LoginForm extends Component {
           marginBottom:'95px',
           boxShadow: '5px 5px 5px 5px #888888', 
           background:'#f1f1f4'}} >
-
           <FormField label="Username:" htmlFor="horizontal-form-input-username">
           <FormInput onChange={this.handleInputChange.bind(this)} type="text" placeholder="Enter Username" name="horizontal-form-input-username" />
           </FormField>
-
           <FormField label="Favorite Team:" >
           <FormSelect onChange={this.handleSelect.bind(this)}  options={teamOptions} firstOption="Select Favorite Team" />
           </FormField>
-
-
           <FormField offsetAbsentLabel>
           <Button style={{float:'right', fontFamily:'Racing Sans One',boxShadow: '0.5px 0.5px 0.5px 0.5px #888888',}} size="sm" submit >Login</Button>
           </FormField>
-
         </Form>
-
       </div>
     );
   }

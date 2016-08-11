@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-
 import {Row, Col, Button, Glyph} from 'elemental';
-import {chat} from './stores.jsx'; // references to databases
-
+import {chat} from './stores.jsx';
 import CommentList from './CommentList';
-//var Count = require('react-count');
-
-
-
 
 export default class Comment extends Component {
 
-handleDelete() {
-  chat.fetch().subscribe( function(allMessages) {
-      chat.remove(allMessages)
-    })
-}
+handleDelete(e) {
+      chat.remove(this.props.id)
+    }
 
   render() {
     return (
       <div style={{borderBottom: '2px solid #dedede',marginBottom: '40px'}}>
-        <Row>
+        <div>
+          <Row>
           {/*<Col sm="1/3">
             <div style={{
               maxWidth: 200,
@@ -36,7 +29,7 @@ handleDelete() {
               <Col>
                 <h2 ><strong> {this.props.username}</strong></h2>
                     <Glyph icon="jersey" />
-                   {this.props.team}
+                    {this.props.team}
                 <hr />
               </Col>
             </Row>
@@ -58,11 +51,11 @@ handleDelete() {
                 <Button style={{width:'75px', marginRight:'3px', }} type="success" size="sm"><Glyph icon="thumbsup" /></Button>
                 <Button style={{width:'75px', marginRight:'3px',}} type="danger" size="sm"><Glyph icon="thumbsdown" /></Button>
                 <Button onClick={this.handleDelete.bind(this)} style={{width:'40px', float: 'right',}} type="warning" size="sm"><Glyph icon="trashcan" /></Button>
-
               </Col>
-            </Row>
-          </Col>
-        </Row>
+              </Row>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }

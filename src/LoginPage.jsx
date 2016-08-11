@@ -17,8 +17,6 @@ var headerStyle = {
   fontFamily: 'Racing Sans One', 
 }
 
-
-
 export default class LoginPage extends Component {
   render() {
     return (
